@@ -1,29 +1,49 @@
-Jenkins
--------
-Why Jenkins
------------
-Easy to instal/upgrade/configuration
-Opensource
-Plugin architecture
-API to its fuctionalities
-Distributed build - Master/Slave
+pipeline {
+    agent none
 
-Job Types
----------
-Freestyle Project
-Maven Project
-External Project
-multi-configuration Project
+    stages {
+        stage('Build') 
+       {
+            agent any
 
-Managing Builds
----------------
-Running Builds
-Viewing the Changes
-Downloading Artifacts
-Build/Test Trends
-Tagging Builds
+            steps 
+            {
+                echo"Build State"
+            }
+        }
 
+        stage('Test on Linux') 
+        {
+            agent 
+            { 
+                label 'linux'
+            }
 
+            steps {
+             
+                echo "Test state"
+            }
+            post {
+                always {
+                    echo "Executing junit"
+                }
+            }
+        }
 
+        stage('Test on Windows') {
+            agent 
+            {
+                label 'windows'
+            }
 
-http://www.javatpoint.com/jenkins-interview-questions
+            steps {
+                 echo "test On Windows"
+            }
+            post {
+                always {
+                    echo "Executing junit for windows"
+                }
+            }
+        }
+    }
+}
