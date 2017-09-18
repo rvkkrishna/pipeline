@@ -1,0 +1,29 @@
+Jenkins
+-------
+Why Jenkins
+-----------
+Easy to instal/upgrade/configuration
+Opensource
+Plugin architecture
+API to its fuctionalities
+Distributed build - Master/Slave
+
+Job Types
+---------
+Freestyle Project
+Maven Project
+External Project
+multi-configuration Project
+
+Managing Builds
+---------------
+Running Builds
+Viewing the Changes
+Downloading Artifacts
+Build/Test Trends
+Tagging Builds
+
+
+
+
+http://www.javatpoint.com/jenkins-interview-questions
